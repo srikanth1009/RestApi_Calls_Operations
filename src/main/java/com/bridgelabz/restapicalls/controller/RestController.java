@@ -1,5 +1,7 @@
 package com.bridgelabz.restapicalls.controller;
 
+import com.bridgelabz.restapicalls.model.User;
+
 import org.springframework.web.bind.annotation.*;
 
 
@@ -23,5 +25,9 @@ public class RestController {
     @GetMapping("/param/{name}")
     public String sayHelloPara(@PathVariable String name) {
         return "Hello " + name + " From Bridgelabz";
+    }
+    @PostMapping("/post")
+    public String sayHello(@RequestBody User user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
     }
 }
